@@ -1,6 +1,6 @@
 //------------this file contains all api's path-------------------
 
-export const Base_URL="https://image-processor-pro.onrender.com/" // the base url of the backend
+export const Base_URL="https://image-processor-101e.onrender.com/" // the base url of the backend
 export const API_PATH={  // api path
     ConvertImg:{
         SingleImg:"/api/v1/Convert/ConvertSingleImg",
