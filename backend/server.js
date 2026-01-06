@@ -9,7 +9,7 @@ import { CompressImgRoutes } from "./routes/Compress.routes.js";
 dotenv.config({ path: './backend/.env', quiet:true }); // explicit path
 const app=express()  // create express instance
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:process.env.URL ,
     methods:["POST","GET"],
     credentials:true
 }))
