@@ -1,15 +1,21 @@
 import { Activity } from 'react'
 import { FiType } from 'react-icons/fi'
 import { IoImageOutline } from "react-icons/io5";
-import DragAndDrop from './Select_Img';
-import WaterMark_Setting from './WaterMark_Setting';
-import Preview_Img from './Preview_Img';
+import DragAndDrop from '../components/Select_Img';
+import WaterMark_Setting from '../components/WaterMark_Setting';
+import Preview_Img from '../components/Preview_Img';
 import { useDispatch, useSelector } from 'react-redux';
 import { onWaterMarkType } from '../features/WaterMark/Image_WaterMark';
 import Download from '../UI/Download';
+import { useEffect } from 'react';
+import { onTabChange } from '../features/Tab/Tab';
 const Image_Watermark = () => {
   const{WaterMarkType}=useSelector(res=>res?.WaterMark)
   const dispatch=useDispatch()
+   useEffect(()=>{
+        dispatch(onTabChange(location.pathname))
+    
+      },[dispatch])
   return (
    <section className=' mx-auto max-w-full lg:max-w-[78%]'>
      <div className='bg-white rounded-xl shadow-lg px-6 py-8 md:p-10 mb-6'>

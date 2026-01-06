@@ -13,7 +13,6 @@ if(file){
     
 }
   }
-  console.log(WaterMarkLogo);
   
   return (
     <div>

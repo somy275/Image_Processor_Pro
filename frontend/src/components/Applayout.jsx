@@ -3,14 +3,12 @@ import { Outlet } from 'react-router'
 import Header from './Header'
 import Footer from './Footer'
 import EditImage from './EditImage'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Processing_Percentage from '../UI/Processing_Percentage'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { onTabChange } from '../features/Tab/Tab'
 
 const Applayout = () => {
-  const dispatch=useDispatch()
   const{OpenEditor} =useSelector(state=>state.Upload)
     const {loading:convert}=useSelector(res=>res?.Convert)
     const {loading:watermark}=useSelector(res=>res?.WaterMark)
@@ -19,9 +17,7 @@ const Applayout = () => {
      const{loading:Compress}=useSelector(res=>res?.Compress)
      
 const [loading, setLoading] = useState(false)
-useEffect(()=>{
-dispatch(onTabChange(location.pathname))
-},[dispatch])
+
   useEffect(()=>{
     if(convert || watermark || resize || Pdf || Compress){
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -35,7 +31,7 @@ dispatch(onTabChange(location.pathname))
  }
   
   return (
-     <main className=" h-auto px-4 md:px-10 bg-linear-to-br from-indigo-50 via-white to-purple-50">
+     <main className="h-auto md:h-screen lg:h-auto px-4 md:px-10 bg-linear-to-br from-indigo-50 via-white to-purple-50">
     <Header/>
    <Outlet/>
    <Footer/>

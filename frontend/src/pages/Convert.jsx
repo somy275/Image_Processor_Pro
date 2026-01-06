@@ -3,12 +3,17 @@ import DragAndDrop from '../components/Select_Img'
 import Preview_Img from '../components/Preview_Img'
 import { useDispatch } from 'react-redux'
 import { SelectedImgFormat, SelectQuality } from '../features/Image_Upload/ImageUploadSlice'
+import { useEffect } from 'react'
+import { onTabChange } from '../features/Tab/Tab'
 
 const Convert = () => {
   const [selectedFormat, setSelectedFormat] = useState("")
   const dispatch=useDispatch()
   const [quality, setQuality] = useState(90)
+  useEffect(()=>{
+    dispatch(onTabChange(location.pathname))
 
+  },[dispatch])
   const onSelectFormat=(e)=>{
     setSelectedFormat(e.target.value)
 dispatch(SelectedImgFormat({format:e.target.value}))

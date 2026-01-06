@@ -3,10 +3,16 @@ import DragAndDrop from '../components/Select_Img'
 import { useDispatch, useSelector } from 'react-redux'
 import { onQualityChange } from '../features/Compress/CompressSlice'
 import Preview_Img from '../components/Preview_Img'
+import { useEffect } from 'react'
+import { onTabChange } from '../features/Tab/Tab'
 
 const Compress = () => {
   const{quality}=useSelector(res=>res?.Compress)
   const dispatch=useDispatch()
+   useEffect(()=>{
+        dispatch(onTabChange(location.pathname))
+    
+      },[dispatch])
   return (
  <section className=' mx-auto max-w-full lg:max-w-[78%]'>
      <div className='bg-white rounded-xl shadow-lg px-6 py-8 md:p-10 mb-6'>

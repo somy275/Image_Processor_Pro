@@ -37,6 +37,7 @@ const Workflow_Status = ({ status, progress, Downloading }) => {
             ...Converting_Workflow.slice(3,5)  
     ]
     useEffect(()=>{
+        console.log(tab_status)
 if(tab_status==="Convert"){
     setWorkflow(Converting_Workflow)
 }

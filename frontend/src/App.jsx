@@ -6,8 +6,9 @@ import Convert from "./pages/Convert"
 const Pdf=lazy(()=> import("./pages/Pdf"))
 const Compress=lazy(()=>import ("./pages/Compress"))
 const Resize=lazy(()=>import ("./pages/Resize"))
-const Image_Watermark=lazy(()=>import ("./components/Image_Watermark"))
+const Image_Watermark=lazy(()=>import ("./pages/Image_Watermark"))
 const App = () => {
+  
   const router=createBrowserRouter([
     {
       path:"/",

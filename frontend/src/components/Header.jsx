@@ -1,10 +1,7 @@
 import React from "react";
 import { LuFileImage } from "react-icons/lu";
-import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router";
-import { onTabChange } from "../features/Tab/Tab";
 const Header = () => {
-  const dispatch=useDispatch()
   return (
     <header className="mx-auto py-8">
       <div className="text-center mb-8">

@@ -4,16 +4,21 @@ import { useDispatch, useSelector } from 'react-redux'
 import { onAspectRatio, onResizeHeight, onResizeScale, onResizeScaleDecrease, onResizeScaleIncrease, onResizeWidth } from '../features/Image_Resize/ResizeImageSlice'
 import Preview_Img from '../components/Preview_Img'
 import { useEffect, useState } from 'react'
+import { onTabChange } from '../features/Tab/Tab'
 
 const Resize = () => {
   const [ResizeScaleStatus, setResizeScaleStatus] = useState("original")
   const dispatch=useDispatch()
   const {ResizeScale,ResizeHeight,ResizeWidth,AspectRatio}=useSelector(res=>res?.Resize)
+useEffect(()=>{
+    dispatch(onTabChange(location.pathname))
 
+  },[dispatch])
   
   useEffect(()=>{
 const scale_status=ResizeScale/100;
 if(scale_status===1){
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   setResizeScaleStatus("original")
 }
 else if(scale_status===2){
