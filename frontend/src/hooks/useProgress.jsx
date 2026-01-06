@@ -14,7 +14,6 @@ export const useProgress = () => {  // A custom hook to track the progress
   events.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
-console.log(data);
 
       if (data.progress !== undefined) setprogress(data.progress);
       if (data.status) setstatus(data.status);

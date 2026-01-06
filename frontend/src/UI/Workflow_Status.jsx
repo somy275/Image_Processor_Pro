@@ -62,7 +62,7 @@ return ()=> setWorkflow([])
 
     return (
         <div className="mt-8 pt-8 border-t border-slate-200">
-            <h3 className="text-sm font-semibold text-slate-600 mb-4 uppercase tracking-wide">
+            <h3 className="text-[clamp(0.9375rem,0.7875rem+1.2vw,1.125rem)] min-[450px]:text-[clamp(1.0625rem,0.8665rem+0.6969vw,1.3125rem)] lg:text-[clamp(0.75rem,0.3566rem+0.6148vw,1.125rem)] font-semibold text-slate-600 mb-4 uppercase tracking-wide">
                 Workflow Status
             </h3>
 
@@ -74,7 +74,7 @@ return ()=> setWorkflow([])
                         (progress === 100 && step.key === "Completed") ||
                         Downloading;
                     return (
-                        <div key={step.key} className="flex items-center gap-3">
+                        <div key={step.key} className="flex items-center gap-3 text-[clamp(0.875rem,0.725rem+1.2vw,1.0625rem)] min-[450px]:text-[clamp(1.0625rem,0.9155rem+0.5226vw,1.25rem)] lg:text-[clamp(0.75rem,0.4877rem+0.4098vw,1rem)]">
                             <div
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${isPast
                                         ? "bg-emerald-500"
@@ -85,7 +85,7 @@ return ()=> setWorkflow([])
                             />
 
                             <span
-                                className={`text-sm ${isPast || isActive
+                                className={` ${isPast || isActive
                                         ? "text-slate-800 font-medium"
                                         : "text-slate-400"
                                     }`}
@@ -95,12 +95,12 @@ return ()=> setWorkflow([])
 
                             {/* Right side labels */}
                             {isActive && (
-                                <span className="ml-auto text-xs text-blue-600 font-semibold">
+                                <span className="ml-auto text-[clamp(0.75rem,0.6rem+1.2vw,0.9375rem)] min-[450px]:text-[clamp(0.9375rem,0.7905rem+0.5226vw,1.125rem)] lg:text-[clamp(0.6875rem,0.4252rem+0.4098vw,0.9375rem)] text-blue-600 font-semibold">
                                     In Progress
                                 </span>
                             )}
                             {isPast && !isActive && (
-                                <span className="ml-auto text-xs text-emerald-600 font-semibold">
+                                <span className="ml-auto text-[clamp(0.75rem,0.6rem+1.2vw,0.9375rem)] min-[450px]:text-[clamp(0.9375rem,0.7905rem+0.5226vw,1.125rem)] lg:text-[clamp(0.6875rem,0.4252rem+0.4098vw,0.9375rem)] text-emerald-600 font-semibold">
                                     ✓
                                 </span>
                             )}

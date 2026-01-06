@@ -44,8 +44,8 @@ useEffect(()=>{
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 bg-linear-to-br from-indigo-50 via-white to-purple-50">
-      <div className="bg-white rounded-2xl shadow-2xl p-12 max-w-md w-full">
+    <section className="relative overflow-x-hidden min-[450px]:min-h-screen flex flex-col items-center justify-center px-4 bg-linear-to-br from-indigo-50 via-white to-purple-50">
+      <div className="bg-white rounded-2xl shadow-2xl p-12 w-screen min-[450px]:h-[max(80vw,60vh)] min-[450px]:max-h-[650px] lg:h-[max(42vw,43vh)] lg:min-h-[550px] lg:max-h-[600px] lg:min-w-[400px] min-[450px]:max-w-md md:max-w-lg lg:max-w-[500px] min-[450px]:w-full lg:w-[30%]">
         {/* ---------- Circular Progress ---------- */}
         <div className="flex flex-col items-center mb-6">
           <div className="relative w-40 h-40">
@@ -84,7 +84,7 @@ useEffect(()=>{
         {/* ---------- Status Badge ---------- */}
         <div className="flex justify-center mb-8">
           <div
-            className="px-6 py-2 rounded-full text-sm font-semibold text-white shadow-lg"
+            className="px-6 py-2 rounded-full text-[clamp(1rem,0.85rem+1.2vw,1.1875rem)] lg:text-[clamp(0.6875rem,0.4252rem+0.4098vw,0.9375rem)] font-semibold text-white shadow-lg"
             style={{ backgroundColor: getStatusColor() }}
           >
             {Downloading ? "Downloaded" : `${status}`}

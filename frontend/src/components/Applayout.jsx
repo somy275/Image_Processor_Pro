@@ -15,8 +15,8 @@ const Applayout = () => {
     const{loading:resize}=useSelector(res=>res?.Resize)
      const{loading:Pdf}=useSelector(res=>res?.Pdf);
      const{loading:Compress}=useSelector(res=>res?.Compress)
+     const [loading, setLoading] = useState(false)
      
-const [loading, setLoading] = useState(false)
 
   useEffect(()=>{
     if(convert || watermark || resize || Pdf || Compress){
