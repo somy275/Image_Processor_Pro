@@ -78,5 +78,134 @@
       <li>⚡Server Side Events(SSE)</li>
     </ul>
   </div>
+  <br/>
+      <h3>📦 Installation & Run</h3>
+  <hr/>
+  <span>
+   <h4>
+     1️⃣ Clone the repository</h4>
+
+ ```bash
+git clone https://github.com/somy275/Image_Processor_Pro.git
+cd Image_Processing
+```
+</span>
+<span>
+<h4>2️⃣ Install dependencies</h4>
+<h5>Backend</h5>
+
+```bash
+cd backend
+npm install
+npm install nodemon --save-dev
+```
+<h5>Frontend</h5>
+
+```bash
+cd ../frontend
+npm install
+```
+</span>
+<span>
+  <h4>3️⃣ Environment Variables (if required)</h4>
+  <h5>Create a .env file in the backend folder:</h5>
+
+  ```env
+PORT=5000
+```
+</span>
+<span>
+  <h4>▶️ Run Frontend & Backend Together</h4>
+  <h5>Step 1: Backend package.json</h5>
+  <h6>Update backend/package.json:</h6>
   
-</div>  
+  ```json
+  {
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  }
+}
+```
+<h5>Step 2: Root package.json</h5>
+<h6>Create or update root package.json:</h6>
+
+```json
+{
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
+```
+<h6>Install concurrently in root:</h6>
+
+```bash
+npm install concurrently --save-dev
+```
+<h5>Step 3: Run both servers</h5>
+<h6>From the root directory:</h6>
+
+```bash
+npm run dev
+```
+</span>
+<br/>
+<div>
+  <h3>📁 Folder Structure</h3>
+  <hr/>
+  
+  ```bash
+Image_Processing/
+├── backend/
+│   ├── controllers/
+│   ├── middlewares/
+│   ├── routes/
+│   ├── .env
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   └── store.js
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── features/
+│   │   │   └── slices/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── UI/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── .gitignore
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── README.md
+│
+├── .gitignore
+├── package.json
+└── package-lock.json
+
+```
+</div>
+<br/>
+<span>
+  <h3>License</h3>
+  <hr/>
+  <h4>This project is free to use and does not contains any license.</h4>
+</span>
+<div/>
+
+
+  
+  
